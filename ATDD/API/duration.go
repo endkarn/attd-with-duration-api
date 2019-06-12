@@ -16,3 +16,8 @@ func ConvertSecondsToDays(second int) string {
 	return days +" days"
 }
 
+func Duration(start int,end int) int {
+	diff := end-start
+	return diff 
+}
+

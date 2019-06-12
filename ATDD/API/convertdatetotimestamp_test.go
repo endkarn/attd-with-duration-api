@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 	
-func TestConvertDate_16_10_1997_toTimestamp_876960000(t *testing.T){
+func TestConvertDate_16_10_1997_ShouldGetTimestamp_876960000(t *testing.T){
 	expectedResult := 876960000
 	day := 16
 	month := 10
@@ -18,7 +18,7 @@ func TestConvertDate_16_10_1997_toTimestamp_876960000(t *testing.T){
 
 }
 
-func TestConvertDate_27_10_1997_toTimestamp_877910400(t *testing.T){
+func TestConvertDate_27_10_1997_ShouldGetTimestamp_877910400(t *testing.T){
 	expectedResult := 877910400
 	day := 27
 	month := 10
@@ -31,3 +31,4 @@ func TestConvertDate_27_10_1997_toTimestamp_877910400(t *testing.T){
 	}
 
 }
+

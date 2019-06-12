@@ -1,12 +1,13 @@
 package duration
 
-import "strconv"
+import (
+	"time"
+	"strconv"
+)
 
-func ConvertDateToTimestamp(day int,month int,year int) int {
-	if day==16 && month==10 && year==1997{
-		return 876960000
-	}
-	return 877910400
+func ConvertDateToTimestamp(day int, month int, year int) int {
+	sec := time.Date(year, time.Month(month), day, 0, 0, 0, 0, time.UTC)
+	return int(sec.Unix())
 	
 }
 

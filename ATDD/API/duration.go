@@ -3,13 +3,12 @@ package duration
 import (
 	"fmt"
 	"strconv"
+	"time"
 )
 
 func ConvertDateToTimestamp(day int, month int, year int) int {
-	if day == 16 && month == 10 && year == 1997 {
-		return 876960000
-	}
-	return 877910400
+	sec := time.Date(year, time.Month(month), day, 0, 0, 0, 0, time.UTC)
+	return int(sec.Unix())
 
 }
 
@@ -37,4 +36,9 @@ func CalculateDayOfOfMonth(sDay int, sMonth int, sYear int, eDay int, eMonth int
 func ConvertSecondsToDays(second int) string {
 	days := strconv.Itoa(second / 86400)
 	return days + " days"
+}
+
+func Duration(start int, end int) int {
+	diff := end - start
+	return diff
 }

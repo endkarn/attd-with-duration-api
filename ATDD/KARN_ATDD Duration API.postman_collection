@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "94c411fa-de46-427c-a511-38adf07c3067",
+		"name": "ATDD Duration API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get durations between Karn's birthday and 10 June 2019",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fb6d74eb-d504-4e3c-a592-72fc422bc435",
+						"exec": [
+							"pm.test(\"TC001 : Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"TC002 : Content-Type is application/json\", function () {",
+							"    pm.response.to.be.header(\"Content-Type\",\"application/json\");",
+							"});",
+							"",
+							"pm.test(\"TC003 : days is 8526 days\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.days).to.eql(\"8526 days\");",
+							"});",
+							"",
+							"pm.test(\"TC004 : startFullDate is Monday, 5 February 1996\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.startFullDate).to.eql(\"Monday, 5 February 1996\");",
+							"});",
+							"",
+							"pm.test(\"TC005 : endFullDate is Monday, 10 June 2019\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.endFullDate).to.eql(\"Monday, 10 June 2019\");",
+							"});",
+							"",
+							"pm.test(\"TC006 : daysOfMonths is 280 months, 25 days\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.daysOfMonths).to.eql(\"280 months, 25 days\");",
+							"});",
+							"",
+							"pm.test(\"TC007 : daysOfWeeks is 1218 weeks\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.daysOfWeeks).to.eql(\"1218 weeks\");",
+							"});",
+							"",
+							"pm.test(\"TC008 : seconds is 736,646,400 seconds\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.seconds).to.eql(\"736,646,400 seconds\");",
+							"});",
+							"",
+							"pm.test(\"TC009 : minutes is 12,277,440 minutes\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.minutes).to.eql(\"12,277,440 minutes\");",
+							"});",
+							"",
+							"pm.test(\"TC010 : hours is 204,624 hours\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.hours).to.eql(\"204,624 hours\");",
+							"});",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Start\": {\n        \"day\": 5,\n        \"month\": 2,\n        \"year\": 1996\n    },\n    \"End\": {\n        \"day\": 10,\n        \"month\": 6,\n        \"year\": 2019\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/duration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"duration"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

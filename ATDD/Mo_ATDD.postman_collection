@@ -24,7 +24,7 @@
 							"",
 							"pm.test(\"days is 7907\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.days).to.eql(\"7,907 days\");",
+							"    pm.expect(jsonData.days).to.eql(\"7907 days\");",
 							"    ",
 							"});",
 							"",
@@ -43,9 +43,9 @@
 							"  pm.expect(jsonData.dayOfMonths).to.eql(\"259 months, 25 days\");",
 							"});",
 							"",
-							"pm.test(\"dayOfWeeks is 1,129 weeks, 4 days\", function () {",
+							"pm.test(\"dayOfWeeks is 1129 weeks, 4 days\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.dayOfWeeks).to.eql(\"1,129 weeks, 4 days\");",
+							"    pm.expect(jsonData.dayOfWeeks).to.eql(\"1129 weeks, 4 days\");",
 							"});",
 							"",
 							"pm.test(\"seconds is 683,164,800 seconds\", function () {",
@@ -86,12 +86,12 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "start",
+							"key": "Start",
 							"value": "{\"day\":\"16\",\"month\":\"10\",\"year\":\"1997\"}",
 							"type": "text"
 						},
 						{
-							"key": "end",
+							"key": "End",
 							"value": "{\"day\":\"16\",\"month\":\"10\",\"year\":\"1997\"}",
 							"type": "text"
 						}

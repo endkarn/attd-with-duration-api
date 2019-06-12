@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "1928f496-4646-4041-b31f-a9aefaa3ae8d",
+		"name": "ATDD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "duration",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3ba4a3a7-1e19-4074-8ce6-bafccc1ac3a3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is application/json\", function () {",
+							"    pm.response.to.be.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.days).to.eql(\"7896 days\");",
+							"    pm.expect(jsonData.days).to.eql(\"Monday, 27 October 1997\");",
+							"    pm.expect(jsonData.days).to.eql(\"Monday, 10 June 2019\");",
+							"    pm.expect(jsonData.days).to.eql(\"259 months, 14 days\");",
+							"    pm.expect(jsonData.days).to.eql(\"1128 weeks\");",
+							"    pm.expect(jsonData.days).to.eql(\"682,214,400 seconds\");",
+							"    pm.expect(jsonData.days).to.eql(\"11,370,240 minutes\");",
+							"    pm.expect(jsonData.days).to.eql(\"189,504 hours\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/duration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"duration"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

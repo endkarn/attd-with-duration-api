@@ -15,7 +15,7 @@ func TestConvertSecond_683164800_toDay_7907(t *testing.T){
 	}
 }
 
-func TestConvertSecond_136646400_toDay_8526(t *testing.T){
+func TestConvertSecond_736646400_toDay_8526(t *testing.T){
 	expectedResult := "8526 days"
 	second := 736646400
 

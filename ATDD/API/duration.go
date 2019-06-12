@@ -13,9 +13,25 @@ func ConvertDateToTimestamp(day int, month int, year int) int {
 
 }
 
-func CalulateDayOfOfMonth(sDay int, sMonth int, sYear int, eDay int, eMonth int, eYear int) interface{} {
+func CalculateDayOfOfMonth(sDay int, sMonth int, sYear int, eDay int, eMonth int, eYear int) interface{} {
 
-	return fmt.Sprint("280 months, 5 days")
+	diffYear := eYear - sYear
+	diffMonths := eMonth - sMonth
+	diffDay := eDay - sDay
+
+	if diffDay < 0 {
+		diffDay += 31
+		diffMonths--
+	}
+
+	if diffMonths < 0 {
+		diffMonths += 12
+		diffYear--
+	}
+
+	totalDiffMonths := (diffYear * 12) + diffMonths
+
+	return fmt.Sprintf("%v months, %v days", totalDiffMonths, diffDay)
 }
 
 func ConvertSecondsToDays(second int) string {
